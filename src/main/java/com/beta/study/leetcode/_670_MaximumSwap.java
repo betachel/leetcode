@@ -19,7 +19,7 @@ package com.beta.study.leetcode;
  */
 public class _670_MaximumSwap {
     public static void main(String[] args) {
-        int num = 9973;
+        int num = 993886;
 
         System.out.println(maximumSwap(num));
     }
@@ -29,29 +29,41 @@ public class _670_MaximumSwap {
 
         int[] array = new int[9];
 
-        int temp = num , i = 0 , max = -1 , div = 0 , index = 0 ;
+        int temp = num, length = 0, max = -1, mod = 0;
 
         while ( temp > 0 ) {
-            div =  temp % 10;
+            mod = temp % 10;
 
-            if ( div > max ) {
-                max =  div > max ? div : max;
-                index = i;
-            }
-           max =  div > max ? div : max;
-            array[i++] =div ;
+            max = mod > max ? mod : max;
+            array[length++] = mod;
 
             temp = temp / 10;
 
         }
 
-        temp = array[i-1];
-        array[i-1] = array[index];
-        array[index] = temp;
+        boolean flag = true;
+        for ( int i = length - 1; i > 0 && flag; i-- ) {
+            if ( array[i] != max ) {
+                int max2 = -1, index = i;
+                for ( int j = i - 1; j >= 0; j-- ) {
+                    if ( array[j] >= max2 ) {
+                        max2 = array[j];
+                        index = j;
+                    }
+                }
 
-        while (i >= 0 ) {
-            result = array[i]  + result * 10;
-            i--;
+                if ( array[i] < max2 ) {
+                    temp = array[index];
+                    array[index] = array[i];
+                    array[i] = temp;
+                    flag = false;
+
+                }
+            }
+        }
+
+        while ( ( length-- ) > 0 ) {
+            result = array[length] + result * 10;
         }
 
         return result;
