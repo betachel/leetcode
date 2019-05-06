@@ -27,7 +27,7 @@ public class _670_MaximumSwap {
     public static int maximumSwap(int num) {
         int result = 0;
 
-        int[] array = new int[9];
+        int[] array = new int[ 9 ];
 
         int temp = num, length = 0, max = -1, mod = 0;
 
@@ -35,27 +35,27 @@ public class _670_MaximumSwap {
             mod = temp % 10;
 
             max = mod > max ? mod : max;
-            array[length++] = mod;
+            array[ length++ ] = mod;
 
             temp = temp / 10;
 
         }
 
         boolean flag = true;
-        for ( int i = length - 1; i > 0 && flag; i-- ) {
-            if ( array[i] != max ) {
+        for ( int i = length - 1 ; i > 0 && flag ; i-- ) {
+            if ( array[ i ] != max ) {
                 int max2 = -1, index = i;
-                for ( int j = i - 1; j >= 0; j-- ) {
-                    if ( array[j] >= max2 ) {
-                        max2 = array[j];
+                for ( int j = i - 1 ; j >= 0 ; j-- ) {
+                    if ( array[ j ] >= max2 ) {
+                        max2 = array[ j ];
                         index = j;
                     }
                 }
 
-                if ( array[i] < max2 ) {
-                    temp = array[index];
-                    array[index] = array[i];
-                    array[i] = temp;
+                if ( array[ i ] < max2 ) {
+                    temp = array[ index ];
+                    array[ index ] = array[ i ];
+                    array[ i ] = temp;
                     flag = false;
 
                 }
@@ -63,7 +63,7 @@ public class _670_MaximumSwap {
         }
 
         while ( ( length-- ) > 0 ) {
-            result = array[length] + result * 10;
+            result = array[ length ] + result * 10;
         }
 
         return result;
