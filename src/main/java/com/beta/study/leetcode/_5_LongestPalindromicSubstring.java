@@ -25,9 +25,9 @@ public class _5_LongestPalindromicSubstring {
     }
 
     /**
-     * dp ½â·¨
-     * ÉèÖÃÒ»¸ö¶şÎ¬Êı×é dp[i][j] , ±íÊ¾×Ó´®i~jÊÇÒ»¸ö»ØÎÄ´®
-     * ÄÇÃ´£¬dp[i-1][j+1] = s[i-1] == s[j+1] && dp[i][j] == true
+     * dp è§£æ³•
+     * è®¾ç½®ä¸€ä¸ªäºŒç»´æ•°ç»„ dp[i][j] , è¡¨ç¤ºå­ä¸²i~jæ˜¯ä¸€ä¸ªå›æ–‡ä¸²
+     * é‚£ä¹ˆï¼Œdp[i-1][j+1] = s[i-1] == s[j+1] && dp[i][j] == true
      *
      * @param s
      * @return
@@ -47,7 +47,7 @@ public class _5_LongestPalindromicSubstring {
             for ( int i = 1 ; i < length ; i++ ) {
                 for ( int j = 0 ; j < i ; j++ ) {
                     if ( s.charAt( i ) == s.charAt( j ) )  {
-                        if ( (i-1) >= 0 && (j+1) < length && (dp[j+1][i-1]  || (i-j == 1))) {
+                        if ( dp[j+1][i-1]  || (i-j == 1) ) {
                             dp[j][i] = true;
                            if ( maxLength < (i-j+1) ) {
                                maxLength = i-j+1;
