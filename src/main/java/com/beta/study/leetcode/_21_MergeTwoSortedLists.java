@@ -12,7 +12,7 @@ package com.beta.study.leetcode;
  * @date 2019/06/23
  */
 public class _21_MergeTwoSortedLists {
-    public static class ListNode {
+    private static class ListNode {
         int val;
         ListNode next;
 
