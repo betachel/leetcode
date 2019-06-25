@@ -40,7 +40,7 @@ public class _21_MergeTwoSortedLists {
         System.out.println( );
     }
 
-    public static ListNode init( int[] array ) {
+    private static ListNode init( int[] array ) {
         if ( array == null || array.length == 0 ) {
             return null;
         }

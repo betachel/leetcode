@@ -106,7 +106,7 @@ public class _23_MergeKSortedLists {
         return head;
     }
 
-    public static ListNode init( int[] array ) {
+    private static ListNode init( int[] array ) {
         if ( array == null || array.length == 0 ) {
             return null;
         }
