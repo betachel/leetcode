@@ -16,7 +16,7 @@ package com.beta.study.leetcode;
  * @author shiqiu
  * @date 2019/06/25
  */
-public class _23MergeKSortedLists {
+public class _23_MergeKSortedLists {
     private static class ListNode {
         int val;
         ListNode next;
@@ -31,7 +31,7 @@ public class _23MergeKSortedLists {
 
         ListNode listNode = init( new int[]{0} );
 
-        _23MergeKSortedLists obj = new _23MergeKSortedLists();
+        _23_MergeKSortedLists obj = new _23_MergeKSortedLists();
 
         ListNode head = obj.mergeKLists( lists );
 
