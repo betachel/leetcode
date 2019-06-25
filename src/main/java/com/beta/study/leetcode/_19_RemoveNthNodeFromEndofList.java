@@ -20,7 +20,7 @@ package com.beta.study.leetcode;
  * @date 2019/06/22
  */
 public class _19_RemoveNthNodeFromEndofList {
-    public static class ListNode {
+    private static class ListNode {
         int val;
         ListNode next;
 
