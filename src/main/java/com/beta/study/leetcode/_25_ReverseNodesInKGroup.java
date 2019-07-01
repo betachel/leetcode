@@ -34,7 +34,7 @@ public class _25_ReverseNodesInKGroup {
     public static void main( String[] args ) {
         ListNode head = init( new int[] { 1 , 2 , 3 , 4 , 5 } );
 
-        ListNode temp = reverseKGroup( head , 2 );
+        ListNode temp = reverseKGroup( head , 4 );
         while ( temp != null ) {
             System.out.print( temp.val + " -> " );
             temp = temp.next;
@@ -45,40 +45,56 @@ public class _25_ReverseNodesInKGroup {
 
     public static ListNode reverseKGroup( ListNode head , int k ) {
 
-        if ( head == null || k <= 0 ) {
+        ListNode result = null;
+
+        if ( head == null || k <= 1 ) {
             return head;
         }
 
-        ListNode current = head, next = null , pre = null;
+        ListNode current = head, next = null  , cTail = null ;
 
         int count = 0;
         while ( current != null ) {
-            next = current;
+
+            next = current.next;
             count = 0;
             while ( ++ count < k && next != null ) {
                 next = next.next;
             }
 
-            if ( count == k && next != null ) {
+            if ( count == k  ) {
                 //reverse listnode
                 count=0;
-                ListNode next2 =  current.next;
+                ListNode next2 =  null , pre = null , c = current ;
+
+                if ( cTail == null ) {
+                    cTail = current ;
+                }
                 while ( ++count <= k  ) {
                     next2 = current.next;
                     current.next = pre;
                     pre = current;
                     current = next2;
                 }
-                current = next2;
-                pre.next = current;
+
+                if ( result == null ) {
+                    result = pre;
+                } else {
+                    cTail.next = pre ;
+                    cTail = c;
+                }
 
             } else {
-                head = current;
+                if ( cTail != null ) {
+                    cTail.next = current;
+                }else {
+                    result = head;
+                }
                 break;
             }
         }
 
-        return head;
+        return result;
     }
 
     private static ListNode init( int[] array ) {
