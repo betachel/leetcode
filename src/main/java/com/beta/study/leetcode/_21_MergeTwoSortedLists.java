@@ -41,6 +41,7 @@ public class _21_MergeTwoSortedLists {
         head = mergeTwoLists_v2(l1, l2);
 
         print(head);
+
     }
 
     private static void print(ListNode head) {
@@ -115,22 +116,21 @@ public class _21_MergeTwoSortedLists {
         }
         ListNode head = null;
         ListNode cur = null, temp = null;
-        ListNode l1 = list1, l2 = list2;
 
-        while (l1 != null || l2 != null) {
-            if (l1 == null) {
-                cur.next = l2;
+        while (list1 != null || list2 != null) {
+            if (list1 == null) {
+                cur.next = list2;
                 break;
-            } else if (l2 == null) {
-                cur.next = l1;
+            } else if (list2 == null) {
+                cur.next = list1;
                 break;
             } else {
-                if (l1.val <= l2.val) {
-                    temp = l1;
-                    l1 = l1.next;
+                if (list1.val <= list2.val) {
+                    temp = list1;
+                    list1 = list1.next;
                 } else {
-                    temp = l2;
-                    l2 = l2.next;
+                    temp = list2;
+                    list2 = list2.next;
                 }
                 if (head == null) {
                     cur = head = temp;
