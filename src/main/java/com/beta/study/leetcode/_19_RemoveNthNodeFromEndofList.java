@@ -45,7 +45,10 @@ public class _19_RemoveNthNodeFromEndofList {
         ListNode temp = head;
 
         while (temp != null) {
-            System.out.print(temp.val + " -> ");
+            System.out.print(temp.val);
+            if (temp.next != null) {
+                System.out.print(" -> ");
+            }
             temp = temp.next;
         }
         System.out.println();
