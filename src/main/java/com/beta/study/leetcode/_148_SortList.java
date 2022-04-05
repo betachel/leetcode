@@ -33,8 +33,7 @@ public class _148_SortList {
             head = head.next;
         }
         ListNode resultHead = new ListNode();
-        ListNode pre = new ListNode(priorityQueue.poll());
-        resultHead.next = pre;
+        ListNode pre = resultHead;
         while(!priorityQueue.isEmpty()) {
             pre.next = new ListNode(priorityQueue.poll());
             pre = pre.next;
