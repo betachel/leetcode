@@ -1,5 +1,7 @@
 package com.beta.study.leetcode;
 
+import com.beta.study.leetcode.model.ListNode;
+
 /**
  * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
  *
@@ -133,12 +135,4 @@ public class _2_AddTwoNumbers {
     }
 }
 
-class ListNode {
-    int val ;
-    ListNode next;
 
-    ListNode(int x) {
-        val = x;
-    }
-    ListNode() {}
-}
