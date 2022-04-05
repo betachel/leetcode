@@ -11,7 +11,7 @@ public class ListNode {
     public ListNode(int x) {
         val = x;
     }
-    ListNode() {}
+    public ListNode() {}
 
     public int getVal() {
         return val;
