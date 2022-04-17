@@ -1,8 +1,6 @@
 package com.beta.study.bilibili;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -14,7 +12,7 @@ import java.util.Optional;
  */
 public class Bilibili_1mian {
     public static void main(String[] args) {
-        int[] nums = new int[] {-3, -3, 0, 0, 0, 3, 3};
+        int[] nums = new int[] {-3, -3, 0, 0, 0, 0, 3, 3};
 
         System.out.println(process(nums));
         System.out.println(process_v2(nums));
@@ -27,24 +25,30 @@ public class Bilibili_1mian {
      * @return
      */
     private static int process(int[] nums) {
-        if (null == nums || nums.length < 2) {
+        if (null == nums || nums.length < 2 || nums[0] > 0 || nums[nums.length - 1] < 0) {
             return 0;
         }
-        int len = nums.length;
-        Map<Integer, List<Integer>> map = new HashMap<>();
+        int len = nums.length, zeroCount = 0;
+        Map<Integer, Integer> map = new HashMap<>();
         int count = 0;
         for (int i = 0; i < len; i++) {
             int key = nums[i];
-            int sub = 0 - key;
-            if (map.containsKey(sub)) {
-                List<Integer> values = map.get(sub);
-                count += values.size();
 
+            if (key == 0) {
+                zeroCount++;
+                continue;
             }
-            List<Integer> values = Optional.ofNullable(map.get(key)).orElseGet(LinkedList::new);
-            values.add(key);
-            map.put(key, values);
+            Integer sub = 0 - key;
+            if (map.containsKey(sub)) {
+                Integer size = map.get(sub);
+                count += size;
+            }
+            Integer size = Optional.ofNullable(map.get(key)).map(t -> t + 1).orElseGet(() -> 1);
+            map.put(key, size);
 
+        }
+        if (zeroCount > 1) {
+            count += zeroCount * (zeroCount - 1) / 2;
         }
         return count;
     }
@@ -56,7 +60,7 @@ public class Bilibili_1mian {
      * @return
      */
     private static int process_v2(int[] nums) {
-        if (null == nums || nums.length < 2) {
+        if (null == nums || nums.length < 2 || nums[0] > 0 || nums[nums.length - 1] < 0) {
             return 0;
         }
         int len = nums.length;
@@ -68,16 +72,22 @@ public class Bilibili_1mian {
             int right = nums[end];
             int sum = nums[start] + nums[end];
             if (sum == 0) {
-                int leftStep = 1, rightStep = 1;
+                int leftStep = 0, rightStep = 0;
                 while (start < end && nums[start] == left) {
                     start++;
                     leftStep++;
                 }
-                while (start < end && nums[end] == right) {
+                while (start <= end && nums[end] == right) {
                     end--;
                     rightStep++;
                 }
-                count += left == 0 ? (leftStep * rightStep) / 2 : leftStep * rightStep;
+
+                if (left == 0 || right == 0) {
+                    int size = leftStep + rightStep;
+                    count += size * (size - 1) / 2;
+                } else {
+                    count += leftStep * rightStep;
+                }
 
             } else if (sum > 0) {
                 end--;
