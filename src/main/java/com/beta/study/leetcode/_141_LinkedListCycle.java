@@ -1,6 +1,6 @@
 package com.beta.study.leetcode;
 
-import com.beta.study.leetcode.model.ListNode;
+import com.beta.study.model.ListNode;
 
 /**
  * @author shiqiu

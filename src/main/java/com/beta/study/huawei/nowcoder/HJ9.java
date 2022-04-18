@@ -1,4 +1,4 @@
-package com.beta.study.huawei;
+package com.beta.study.huawei.nowcoder;
 
 import java.util.HashMap;
 import java.util.Map;

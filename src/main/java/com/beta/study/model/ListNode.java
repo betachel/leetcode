@@ -1,4 +1,4 @@
-package com.beta.study.leetcode.model;
+package com.beta.study.model;
 
 /**
  * @author shiqiu

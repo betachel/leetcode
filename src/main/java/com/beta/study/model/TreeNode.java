@@ -1,4 +1,4 @@
-package com.beta.study.leetcode.model;
+package com.beta.study.model;
 
 /**
  * @author shiqiu
@@ -6,26 +6,26 @@ package com.beta.study.leetcode.model;
  */
 
 public class TreeNode {
-    public int val;
+    public int value;
     public TreeNode left;
     public TreeNode right;
 
     public TreeNode() {}
 
-    public TreeNode(int val) {this.val = val;}
+    public TreeNode(int val) {this.value = val;}
 
     TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
+        this.value = val;
         this.left = left;
         this.right = right;
     }
 
-    public int getVal() {
-        return val;
+    public int getValue() {
+        return value;
     }
 
-    public void setVal(int val) {
-        this.val = val;
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public TreeNode getLeft() {

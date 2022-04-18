@@ -3,7 +3,7 @@ package com.beta.study.leetcode;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-import com.beta.study.leetcode.model.ListNode;
+import com.beta.study.model.ListNode;
 
 /**
  * @author shiqiu
