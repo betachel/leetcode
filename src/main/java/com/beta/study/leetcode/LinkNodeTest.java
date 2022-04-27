@@ -5,6 +5,7 @@ package com.beta.study.leetcode;
  * @date 2019/06/26
  */
 public class LinkNodeTest {
+
     private static class ListNode {
         int val;
         ListNode next;

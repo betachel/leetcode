@@ -6,26 +6,26 @@ package com.beta.study.model;
  */
 
 public class TreeNode {
-    public int value;
+    public int val;
     public TreeNode left;
     public TreeNode right;
 
     public TreeNode() {}
 
-    public TreeNode(int val) {this.value = val;}
+    public TreeNode(int val) {this.val = val;}
 
     TreeNode(int val, TreeNode left, TreeNode right) {
-        this.value = val;
+        this.val = val;
         this.left = left;
         this.right = right;
     }
 
-    public int getValue() {
-        return value;
+    public int getVal() {
+        return val;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setVal(int val) {
+        this.val = val;
     }
 
     public TreeNode getLeft() {
