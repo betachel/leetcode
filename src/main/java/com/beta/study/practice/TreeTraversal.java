@@ -28,7 +28,7 @@ public class TreeTraversal {
         queue.add(root);
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
-            list.add(node.getValue());
+            list.add(node.getVal());
             if (node.getLeft() != null) {
                 queue.add(node.getLeft());
             }
@@ -60,7 +60,7 @@ public class TreeTraversal {
             if (!oddStack.isEmpty()) {
                 while (!oddStack.isEmpty()) {
                     TreeNode node = oddStack.pop();
-                    list.add(node.getValue());
+                    list.add(node.getVal());
                     if (node.getRight() != null) {
                         evenStack.push(node.getRight());
                     }
@@ -71,7 +71,7 @@ public class TreeTraversal {
             } else if (!evenStack.isEmpty()) {
                 while (!evenStack.isEmpty()) {
                     TreeNode node = evenStack.pop();
-                    list.add(node.getValue());
+                    list.add(node.getVal());
                     if (node.getLeft() != null) {
                         oddStack.push(node.getLeft());
                     }
