@@ -1,5 +1,7 @@
 package com.beta.study.practice;
 
+import com.beta.study.utils.ArrayUtils;
+
 /**
  * 基于计数排序
  *
@@ -13,7 +15,7 @@ public class CountSort {
         CountSort instance = new CountSort();
         instance.countSort(nums);
         System.out.println("after sort : ");
-        instance.print(nums);
+        ArrayUtils.print(nums);
     }
 
     /**
@@ -42,24 +44,6 @@ public class CountSort {
                 nums[j++] = i;
             }
         }
-    }
-
-    /**
-     * 数组打印
-     *
-     * @param nums
-     */
-    public void print(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return;
-        }
-        for (int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i]);
-            if (i < nums.length - 1) {
-                System.out.print(",");
-            }
-        }
-        System.out.println();
     }
 
 }
