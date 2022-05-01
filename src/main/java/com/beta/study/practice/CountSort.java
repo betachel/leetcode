@@ -32,7 +32,7 @@ public class CountSort {
         for (int i = 0; i < len; i++) {
             countArray[nums[i]]++;
         }
-        for (int i = 0, j = 0; i < countLen; i++) {
+        for (int i = 0, j = 0; i < countLen && j < len; i++) {
             int count = countArray[i];
             if (count == 0) {
                 continue;
@@ -46,6 +46,7 @@ public class CountSort {
 
     /**
      * 数组打印
+     *
      * @param nums
      */
     public void print(int[] nums) {
