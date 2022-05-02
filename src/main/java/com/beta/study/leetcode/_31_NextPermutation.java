@@ -11,10 +11,10 @@ import java.util.stream.Stream;
  *
  * Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
  *
- * 1,2,3 ¡ú 1,3,2
- * 1,3,2 ¡ú 2,1,3
- * 3,2,1 ¡ú 1,2,3
- * 1,1,5 ¡ú 1,5,1
+ * 1,2,3 â†’ 1,3,2
+ * 1,3,2 â†’ 2,1,3
+ * 3,2,1 â†’ 1,2,3
+ * 1,1,5 â†’ 1,5,1
  *
  * @author shiqiu
  * @date 2019/07/02
