@@ -90,17 +90,16 @@ public class _3_LongestSubstringWithoutRepeatingCharacters {
         if (s == null || s.length() == 0) {
             return 0;
         }
-        int length = 1, i = 0;
+        int length = 1;
         int strLength = s.length();
-
         Map<Character, Integer> map = new HashMap<>(s.length());
-
         int start = 0;
-        while (i < strLength) {
-            Character c = s.charAt(i++);
-            Integer index = map.get(c);
-            start = Math.max(index == null ? 0 : index, start);
-            length = Math.max(length, i - start);
+        for (int i = 0; i < strLength; i++) {
+            char c = s.charAt(i);
+            if (map.containsKey(c)) {
+                start = Math.max(start, map.get(c) + 1);
+            }
+            length = Math.max(length, i - start + 1);
             map.put(c, i);
         }
         return length;
