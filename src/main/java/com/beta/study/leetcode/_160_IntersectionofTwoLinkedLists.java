@@ -24,11 +24,12 @@ public class _160_IntersectionofTwoLinkedLists {
         }
         int sub = lena > lenb ? lena - lenb : lenb - lena;
         temp = lena > lenb ? headA : headB;
+        //取两个链表最长的，其长度差为sub，较长的链表先走sub步
         while (sub-- > 0) {
             temp = temp.next;
         }
         ListNode head = lena > lenb ? headB : headA;
-
+        //后续两个链表一次走，看是否相交
         while (head != null && temp != null) {
             if (head == temp) {
                 return head;
