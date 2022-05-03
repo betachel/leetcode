@@ -50,7 +50,7 @@ public class _42_TrappingRainWater {
          * 当前下标i左边最高其实等于max(i-1左边最高，height[i-1])；右边最高同理，所以考虑用两个数字来存储
          * 优化效果明显
          */
-        int[] leftHeight = new int[length];
+        /*int[] leftHeight = new int[length];
         leftHeight[0] = 0;
         for (int i = 1; i < length; i++) {
             leftHeight[i] = Math.max(leftHeight[i - 1], height[i - 1]);
@@ -59,6 +59,15 @@ public class _42_TrappingRainWater {
         rightHeight[length - 1] = 0;
         for (int i = length - 2; i >= 0; i--) {
             rightHeight[i] = Math.max(rightHeight[i + 1], height[i + 1]);
+        }*/
+        //上述两个循环，可以优化成一个循环
+        int[] leftHeight = new int[length];
+        leftHeight[0] = 0;
+        int[] rightHeight = new int[length];
+        rightHeight[length - 1] = 0;
+        for (int i = 1; i < length; i++) {
+            leftHeight[i] = Math.max(leftHeight[i - 1], height[i - 1]);
+            rightHeight[length-1-i] = Math.max(rightHeight[length-i], height[length-i]);
         }
 
         for (int i = 0; i < length; i++) {
