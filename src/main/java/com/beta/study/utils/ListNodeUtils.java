@@ -20,4 +20,19 @@ public class ListNodeUtils {
         }
         return head;
     }
+
+    public static void print(ListNode head) {
+        if (head == null) {
+            return;
+        }
+        ListNode temp = head;
+        while (temp != null) {
+            System.out.print(temp.val);
+            if (temp.next != null) {
+                System.out.print("->");
+            }
+            temp = temp.next;
+        }
+        System.out.println();
+    }
 }
