@@ -12,7 +12,7 @@ public class _142_LinkedListCycleII {
          * 快慢指针，一个一次走一步，一个一次走两步，能相遇说明有环，否则无环
          * 看解释：https://leetcode-cn.com/problems/linked-list-cycle-ii/solution/linked-list-cycle-ii-kuai-man-zhi-zhen-shuang-zhi-/
          */
-        if (head == null) {return null;}
+        if (head == null || head.next == null) {return null;}
         ListNode slow = head, fast = head;
         while (slow != null && fast != null && fast.next != null) {
             slow = slow.next;
@@ -20,6 +20,9 @@ public class _142_LinkedListCycleII {
             if (slow == fast) {
                 break;
             }
+        }
+        if(slow == null || fast == null || fast.next == null) {
+            return null;
         }
         fast = head;
         while(slow != fast) {
