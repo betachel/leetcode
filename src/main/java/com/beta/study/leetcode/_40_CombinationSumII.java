@@ -15,7 +15,7 @@ public class _40_CombinationSumII {
         int[] candidates = new int[] {2, 5, 2, 1, 2};
         int target = 5;
         List<List<Integer>> result = instance.combinationSum(candidates, target);
-        System.out.println();
+        System.out.println(result.size());
     }
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
