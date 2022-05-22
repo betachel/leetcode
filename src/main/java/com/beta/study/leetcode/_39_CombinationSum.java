@@ -28,16 +28,7 @@ public class _39_CombinationSum {
         return result;
     }
 
-    /**
-     * 此解法ac了，但是性能不太好
-     *
-     * @param candidates
-     * @param prefixSum
-     * @param target
-     * @param start
-     * @param path
-     * @param result
-     */
+
     private void dfs(int[] candidates, int prefixSum, int target, int start, List<Integer> path, List<List<Integer>> result) {
         //注意本题需要去重，使用start就是用来做去重使用的
         if (start >= candidates.length) {
